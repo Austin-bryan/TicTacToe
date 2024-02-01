@@ -50,6 +50,7 @@
             Controls.Add(MainButton);
             Name = "TicTacToeButton";
             Size = new Size(75, 75);
+            Load += TicTacToeButton_Load;
             ResumeLayout(false);
         }
 
