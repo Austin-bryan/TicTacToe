@@ -36,6 +36,7 @@
             MainButton.FlatAppearance.BorderSize = 0;
             MainButton.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
             MainButton.Location = new Point(0, 0);
+            MainButton.Margin = new Padding(3, 4, 3, 4);
             MainButton.Name = "MainButton";
             MainButton.Size = new Size(75, 75);
             MainButton.TabIndex = 0;
@@ -45,9 +46,10 @@
             // 
             // TicTacToeButton
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(MainButton);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "TicTacToeButton";
             Size = new Size(75, 75);
             ResumeLayout(false);

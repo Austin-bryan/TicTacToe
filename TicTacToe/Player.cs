@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TicTacToe;
 
-internal class Player
+public class Player
 {
     public char Symbol { get; }
     public Color Color { get; }
-    Player(char symbol, Color color) => (Symbol, Color) = (symbol, color);
+    public Player(char symbol, Color color) => (Symbol, Color) = (symbol, color);
 }
