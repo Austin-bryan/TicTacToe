@@ -21,5 +21,9 @@ public static class TurnManager
         };
         ActivePlayer = Players[0];
     }
-    public static void NextTurn() => ActivePlayer = Players[playerIndex++ % 2];
+    public static void NextTurn()
+    {
+        ActivePlayer = Players[playerIndex++ % 2];
+        Form1.ChangeTurnDisplay(ActivePlayer);
+    }
 }

@@ -13,8 +13,9 @@ namespace TicTacToe
         {
             instance = this;
             InitializeComponent();
+            ChangeTurnDisplay(TurnManager.ActivePlayer);//sets the turn display when it starts
 
-            // Get each row of buttons
+            //Get each row of buttons
             (topRowButtons, middleRowButtons, bottomRowButtons) = (GetRowButtons(instance.topRow), GetRowButtons(instance.middleRow), GetRowButtons(instance.bottomRow));
         }
 
@@ -42,14 +43,14 @@ namespace TicTacToe
             char targetSymbol = rowButtons[0].Symbol;
 
             foreach (var item in rowButtons)
-                if (item.Symbol != targetSymbol) 
+                if (item.Symbol != targetSymbol)
                     return false;
             return true;
         }
 
         private static bool CheckColumn(int column) => CheckDiagonal(column, column, column);
         private static TicTacToeButton[] GetRowButtons(FlowLayoutPanel row) => row.Controls.Cast<TicTacToeButton>().ToArray();
-        
+
         private static bool CheckDiagonal(int topCorner, int middle, int bottomCorner)
         {
             if (topRowButtons[topCorner].Symbol == '-')
@@ -59,6 +60,12 @@ namespace TicTacToe
                 return true;
             return false;
         }
+        public static void ChangeTurnDisplay(Player activePlayer)
+        {
+            instance.TurnDisplayLabel.Text = activePlayer.Symbol.ToString();
+            instance.TurnDisplayLabel.ForeColor = Color.White;
+            instance.TurnDisplayLabel.BackColor = activePlayer.Color;
 
+        }
     }
 }

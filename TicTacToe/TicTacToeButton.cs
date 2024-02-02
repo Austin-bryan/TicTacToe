@@ -18,10 +18,10 @@ public partial class TicTacToeButton : UserControl
 
     private void MainButton_Click(object sender, EventArgs e)
     {
-        MainButton.Text      = TurnManager.ActivePlayer.Symbol.ToString();
+        MainButton.Text = TurnManager.ActivePlayer.Symbol.ToString();
         MainButton.ForeColor = Color.White;
         MainButton.BackColor = TurnManager.ActivePlayer.Color;
-        hasBeenClicked       = true;
+        hasBeenClicked = true;
 
         Form1.CheckForWin();
         TurnManager.NextTurn();
@@ -36,7 +36,7 @@ public partial class TicTacToeButton : UserControl
     {
         if (hasBeenClicked)
             return;
-        
+
         (MainButton.Text, MainButton.ForeColor) = (buttonText, textColor);
     }
 }
