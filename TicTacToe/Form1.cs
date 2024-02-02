@@ -24,7 +24,7 @@ namespace TicTacToe
         public static void CheckForWin()
         {
             if (HasWon())
-                MessageBox.Show("Game has been won!");
+                MessageBox.Show(TurnManager.ActivePlayer.Symbol + " has won!");
         }
 
         private static bool HasWon()

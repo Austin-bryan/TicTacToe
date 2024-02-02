@@ -181,6 +181,7 @@
             Controls.Add(middleRow);
             Controls.Add(topRow);
             Controls.Add(bottomRow);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
