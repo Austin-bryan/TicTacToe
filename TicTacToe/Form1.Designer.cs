@@ -28,121 +28,154 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            ticTacToeButton1 = new TicTacToeButton();
-            ticTacToeButton2 = new TicTacToeButton();
-            ticTacToeButton3 = new TicTacToeButton();
-            ticTacToeButton4 = new TicTacToeButton();
-            ticTacToeButton5 = new TicTacToeButton();
-            ticTacToeButton6 = new TicTacToeButton();
-            ticTacToeButton7 = new TicTacToeButton();
-            ticTacToeButton8 = new TicTacToeButton();
-            ticTacToeButton9 = new TicTacToeButton();
-            flowLayoutPanel1.SuspendLayout();
+            topRow = new FlowLayoutPanel();
+            topRowButton_Left = new TicTacToeButton();
+            topRowButton_Middle = new TicTacToeButton();
+            topRowButton_Right = new TicTacToeButton();
+            middleRow = new FlowLayoutPanel();
+            middleRowButton_Left = new TicTacToeButton();
+            middleRowButton_Middle = new TicTacToeButton();
+            middleRowButton_Right = new TicTacToeButton();
+            bottomRow = new FlowLayoutPanel();
+            bottomRowButton_Left = new TicTacToeButton();
+            bottomRowButton_Middle = new TicTacToeButton();
+            bottomRowButton_Right = new TicTacToeButton();
+            topRow.SuspendLayout();
+            middleRow.SuspendLayout();
+            bottomRow.SuspendLayout();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // topRow
             // 
-            flowLayoutPanel1.Controls.Add(ticTacToeButton1);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton2);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton3);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton4);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton5);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton6);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton7);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton8);
-            flowLayoutPanel1.Controls.Add(ticTacToeButton9);
-            flowLayoutPanel1.Location = new Point(12, 12);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(248, 247);
-            flowLayoutPanel1.TabIndex = 0;
+            topRow.Controls.Add(topRowButton_Left);
+            topRow.Controls.Add(topRowButton_Middle);
+            topRow.Controls.Add(topRowButton_Right);
+            topRow.Location = new Point(12, 12);
+            topRow.Name = "topRow";
+            topRow.Size = new Size(248, 80);
+            topRow.TabIndex = 3;
             // 
-            // ticTacToeButton1
+            // topRowButton_Left
             // 
-            ticTacToeButton1.Location = new Point(3, 3);
-            ticTacToeButton1.Name = "ticTacToeButton1";
-            ticTacToeButton1.Size = new Size(75, 75);
-            ticTacToeButton1.TabIndex = 0;
+            topRowButton_Left.ForeColor = SystemColors.ControlText;
+            topRowButton_Left.Location = new Point(3, 3);
+            topRowButton_Left.Name = "topRowButton_Left";
+            topRowButton_Left.Size = new Size(75, 75);
+            topRowButton_Left.TabIndex = 0;
             // 
-            // ticTacToeButton2
+            // topRowButton_Middle
             // 
-            ticTacToeButton2.Location = new Point(84, 3);
-            ticTacToeButton2.Name = "ticTacToeButton2";
-            ticTacToeButton2.Size = new Size(75, 75);
-            ticTacToeButton2.TabIndex = 1;
+            topRowButton_Middle.ForeColor = SystemColors.ControlText;
+            topRowButton_Middle.Location = new Point(84, 3);
+            topRowButton_Middle.Name = "topRowButton_Middle";
+            topRowButton_Middle.Size = new Size(75, 75);
+            topRowButton_Middle.TabIndex = 1;
             // 
-            // ticTacToeButton3
+            // topRowButton_Right
             // 
-            ticTacToeButton3.Location = new Point(165, 3);
-            ticTacToeButton3.Name = "ticTacToeButton3";
-            ticTacToeButton3.Size = new Size(75, 75);
-            ticTacToeButton3.TabIndex = 2;
+            topRowButton_Right.ForeColor = SystemColors.ControlText;
+            topRowButton_Right.Location = new Point(165, 3);
+            topRowButton_Right.Name = "topRowButton_Right";
+            topRowButton_Right.Size = new Size(75, 75);
+            topRowButton_Right.TabIndex = 2;
             // 
-            // ticTacToeButton4
+            // middleRow
             // 
-            ticTacToeButton4.Location = new Point(3, 84);
-            ticTacToeButton4.Name = "ticTacToeButton4";
-            ticTacToeButton4.Size = new Size(75, 75);
-            ticTacToeButton4.TabIndex = 3;
+            middleRow.Controls.Add(middleRowButton_Left);
+            middleRow.Controls.Add(middleRowButton_Middle);
+            middleRow.Controls.Add(middleRowButton_Right);
+            middleRow.Location = new Point(12, 92);
+            middleRow.Name = "middleRow";
+            middleRow.Size = new Size(248, 80);
+            middleRow.TabIndex = 4;
             // 
-            // ticTacToeButton5
+            // middleRowButton_Left
             // 
-            ticTacToeButton5.Location = new Point(84, 84);
-            ticTacToeButton5.Name = "ticTacToeButton5";
-            ticTacToeButton5.Size = new Size(75, 75);
-            ticTacToeButton5.TabIndex = 4;
+            middleRowButton_Left.ForeColor = SystemColors.ControlText;
+            middleRowButton_Left.Location = new Point(3, 3);
+            middleRowButton_Left.Name = "middleRowButton_Left";
+            middleRowButton_Left.Size = new Size(75, 75);
+            middleRowButton_Left.TabIndex = 0;
             // 
-            // ticTacToeButton6
+            // middleRowButton_Middle
             // 
-            ticTacToeButton6.Location = new Point(165, 84);
-            ticTacToeButton6.Name = "ticTacToeButton6";
-            ticTacToeButton6.Size = new Size(75, 75);
-            ticTacToeButton6.TabIndex = 5;
+            middleRowButton_Middle.ForeColor = SystemColors.ControlText;
+            middleRowButton_Middle.Location = new Point(84, 3);
+            middleRowButton_Middle.Name = "middleRowButton_Middle";
+            middleRowButton_Middle.Size = new Size(75, 75);
+            middleRowButton_Middle.TabIndex = 1;
             // 
-            // ticTacToeButton7
+            // middleRowButton_Right
             // 
-            ticTacToeButton7.Location = new Point(3, 165);
-            ticTacToeButton7.Name = "ticTacToeButton7";
-            ticTacToeButton7.Size = new Size(75, 75);
-            ticTacToeButton7.TabIndex = 6;
+            middleRowButton_Right.ForeColor = SystemColors.ControlText;
+            middleRowButton_Right.Location = new Point(165, 3);
+            middleRowButton_Right.Name = "middleRowButton_Right";
+            middleRowButton_Right.Size = new Size(75, 75);
+            middleRowButton_Right.TabIndex = 2;
             // 
-            // ticTacToeButton8
+            // bottomRow
             // 
-            ticTacToeButton8.Location = new Point(84, 165);
-            ticTacToeButton8.Name = "ticTacToeButton8";
-            ticTacToeButton8.Size = new Size(75, 75);
-            ticTacToeButton8.TabIndex = 7;
+            bottomRow.Controls.Add(bottomRowButton_Left);
+            bottomRow.Controls.Add(bottomRowButton_Middle);
+            bottomRow.Controls.Add(bottomRowButton_Right);
+            bottomRow.Location = new Point(12, 172);
+            bottomRow.Name = "bottomRow";
+            bottomRow.Size = new Size(248, 80);
+            bottomRow.TabIndex = 5;
             // 
-            // ticTacToeButton9
+            // bottomRowButton_Left
             // 
-            ticTacToeButton9.Location = new Point(165, 165);
-            ticTacToeButton9.Name = "ticTacToeButton9";
-            ticTacToeButton9.Size = new Size(75, 75);
-            ticTacToeButton9.TabIndex = 8;
+            bottomRowButton_Left.ForeColor = SystemColors.ControlText;
+            bottomRowButton_Left.Location = new Point(3, 3);
+            bottomRowButton_Left.Name = "bottomRowButton_Left";
+            bottomRowButton_Left.Size = new Size(75, 75);
+            bottomRowButton_Left.TabIndex = 0;
+            // 
+            // bottomRowButton_Middle
+            // 
+            bottomRowButton_Middle.ForeColor = SystemColors.ControlText;
+            bottomRowButton_Middle.Location = new Point(84, 3);
+            bottomRowButton_Middle.Name = "bottomRowButton_Middle";
+            bottomRowButton_Middle.Size = new Size(75, 75);
+            bottomRowButton_Middle.TabIndex = 1;
+            // 
+            // bottomRowButton_Right
+            // 
+            bottomRowButton_Right.ForeColor = SystemColors.ControlText;
+            bottomRowButton_Right.Location = new Point(165, 3);
+            bottomRowButton_Right.Name = "bottomRowButton_Right";
+            bottomRowButton_Right.Size = new Size(75, 75);
+            bottomRowButton_Right.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(flowLayoutPanel1);
+            ClientSize = new Size(800, 270);
+            Controls.Add(middleRow);
+            Controls.Add(topRow);
+            Controls.Add(bottomRow);
             Name = "Form1";
             Text = "Form1";
-            flowLayoutPanel1.ResumeLayout(false);
+            Load += Form1_Load;
+            topRow.ResumeLayout(false);
+            middleRow.ResumeLayout(false);
+            bottomRow.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanel1;
-        private TicTacToeButton ticTacToeButton1;
-        private TicTacToeButton ticTacToeButton2;
-        private TicTacToeButton ticTacToeButton3;
-        private TicTacToeButton ticTacToeButton4;
-        private TicTacToeButton ticTacToeButton5;
-        private TicTacToeButton ticTacToeButton6;
-        private TicTacToeButton ticTacToeButton7;
-        private TicTacToeButton ticTacToeButton8;
-        private TicTacToeButton ticTacToeButton9;
+        private FlowLayoutPanel topRow;
+        private TicTacToeButton topRowButton_Left;
+        private TicTacToeButton topRowButton_Middle;
+        private TicTacToeButton topRowButton_Right;
+        private FlowLayoutPanel middleRow;
+        private TicTacToeButton middleRowButton_Left;
+        private TicTacToeButton middleRowButton_Middle;
+        private TicTacToeButton middleRowButton_Right;
+        private FlowLayoutPanel bottomRow;
+        private TicTacToeButton bottomRowButton_Left;
+        private TicTacToeButton bottomRowButton_Middle;
+        private TicTacToeButton bottomRowButton_Right;
     }
 }

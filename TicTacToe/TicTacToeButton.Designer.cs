@@ -42,12 +42,15 @@
             MainButton.Text = "-";
             MainButton.UseVisualStyleBackColor = true;
             MainButton.Click += MainButton_Click;
+            MainButton.MouseLeave += MainButton_MouseLeave;
+            MainButton.MouseHover += MainButton_MouseHover;
             // 
             // TicTacToeButton
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(MainButton);
+            ForeColor = SystemColors.ControlText;
             Name = "TicTacToeButton";
             Size = new Size(75, 75);
             Load += TicTacToeButton_Load;
