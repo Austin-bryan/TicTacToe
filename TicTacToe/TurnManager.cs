@@ -8,8 +8,8 @@ namespace TicTacToe;
 
 public static class TurnManager
 {
-    private static List<Player> Players;
-    public static Player ActivePlayer;
+    private static readonly List<Player> Players;
+    public static Player ActivePlayer { get; private set; }
     private static int playerIndex = 1;
 
     static TurnManager()

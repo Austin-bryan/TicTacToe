@@ -2,14 +2,14 @@ using System.Data.Common;
 
 namespace TicTacToe
 {
-    public partial class Form1 : Form
+    public partial class TicTacToe : Form
     {
-        private static Form1 instance;
+        private static TicTacToe instance;
         private static TicTacToeButton[] topRowButtons;
         private static TicTacToeButton[] middleRowButtons;
         private static TicTacToeButton[] bottomRowButtons;
 
-        public Form1()
+        public TicTacToe()
         {
             instance = this;
             InitializeComponent();
@@ -23,17 +23,27 @@ namespace TicTacToe
         public static void CheckForWin()
         {
             if (HasWon())
-                MessageBox.Show("Game has been won!");
+            {
+                DialogResult dialogResult = MessageBox.Show("Play Again?", $"Player {TurnManager.ActivePlayer.Symbol} has won!", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    topRowButtons.ToList().ForEach(b => b.ResetButton());
+                    middleRowButtons.ToList().ForEach(b => b.ResetButton());
+                    bottomRowButtons.ToList().ForEach(b => b.ResetButton());
+                }
+            }
+            else TurnManager.NextTurn();
         }
 
         private static bool HasWon()
         {
-            return CheckRow(instance.topRow) || CheckRow(instance.middleRow) || CheckRow(instance.bottomRow) ||
-                   CheckColumn(0) || CheckColumn(1) || CheckColumn(2) ||
-                   CheckDiagonal(0, 1, 2) || CheckDiagonal(2, 1, 0);
+            return IsRowWon(instance.topRow) || IsRowWon(instance.middleRow) || IsRowWon(instance.bottomRow) ||
+                   IsColWon(0) || IsColWon(1) || IsColWon(2) ||
+                   IsDiagonalWon(0, 1, 2) || IsDiagonalWon(2, 1, 0);
         }
 
-        private static bool CheckRow(FlowLayoutPanel row)
+        private static bool IsRowWon(FlowLayoutPanel row)
         {
             TicTacToeButton[] rowButtons = GetRowButtons(row);
             if (rowButtons[0].Symbol == '-')
@@ -47,10 +57,10 @@ namespace TicTacToe
             return true;
         }
 
-        private static bool CheckColumn(int column) => CheckDiagonal(column, column, column);
+        private static bool IsColWon(int column) => IsDiagonalWon(column, column, column);
         private static TicTacToeButton[] GetRowButtons(FlowLayoutPanel row) => row.Controls.Cast<TicTacToeButton>().ToArray();
         
-        private static bool CheckDiagonal(int topCorner, int middle, int bottomCorner)
+        private static bool IsDiagonalWon(int topCorner, int middle, int bottomCorner)
         {
             if (topRowButtons[topCorner].Symbol == '-')
                 return false;

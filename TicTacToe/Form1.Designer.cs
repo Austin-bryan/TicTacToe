@@ -1,6 +1,6 @@
 ﻿namespace TicTacToe
 {
-    partial class Form1
+    partial class TicTacToe
     {
         /// <summary>
         ///  Required designer variable.
@@ -147,15 +147,16 @@
             bottomRowButton_Right.Size = new Size(75, 75);
             bottomRowButton_Right.TabIndex = 2;
             // 
-            // Form1
+            // TicTacToe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 270);
             Controls.Add(middleRow);
             Controls.Add(topRow);
             Controls.Add(bottomRow);
-            Name = "Form1";
+            Name = "TicTacToe";
             Text = "Form1";
             Load += Form1_Load;
             topRow.ResumeLayout(false);
