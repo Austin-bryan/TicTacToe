@@ -8,6 +8,7 @@ namespace TicTacToe
         private static TicTacToeButton[] topRowButtons;
         private static TicTacToeButton[] middleRowButtons;
         private static TicTacToeButton[] bottomRowButtons;
+        private static int moveCount = 0;
 
         public TicTacToe()
         {
@@ -22,18 +23,35 @@ namespace TicTacToe
 
         public static void CheckForWin()
         {
-            if (HasWon())
+            if (!HasWon())
             {
-                DialogResult dialogResult = MessageBox.Show("Play Again?", $"Player {TurnManager.ActivePlayer.Symbol} has won!", MessageBoxButtons.YesNo);
+                TurnManager.NextTurn();
+                moveCount++;
+
+                if (moveCount >= 9)
+                    ResetDialogBox("The game has ended in a draw.");
+            }
+            else ResetDialogBox($"Player {TurnManager.ActivePlayer.Symbol} has won!");
+
+            return;
+
+            // ---- Local Functions ----
+            static void ResetDialogBox(string title)
+            {
+                DialogResult dialogResult = MessageBox.Show("Play again?", title, MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
-                {
-                    topRowButtons.ToList().ForEach(b => b.ResetButton());
-                    middleRowButtons.ToList().ForEach(b => b.ResetButton());
-                    bottomRowButtons.ToList().ForEach(b => b.ResetButton());
-                }
+                    ResetGame();
+                else Application.Exit();
             }
-            else TurnManager.NextTurn();
+        }
+
+        private static void ResetGame()
+        {
+            topRowButtons   .ToList().ForEach(b => b.ResetButton());
+            middleRowButtons.ToList().ForEach(b => b.ResetButton());
+            bottomRowButtons.ToList().ForEach(b => b.ResetButton());
+            moveCount = 0;
         }
 
         private static bool HasWon()
