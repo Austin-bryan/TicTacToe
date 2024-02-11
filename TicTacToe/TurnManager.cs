@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TicTacToe;
+﻿namespace TicTacToe;
 
 public static class TurnManager
 {
-    private static List<Player> Players;
-    public static Player ActivePlayer;
+    private static readonly List<Player> Players;
+    public static Player ActivePlayer { get; private set; }
+    public static Player PlayerX => Players[0];
+    public static Player PlayerO => Players[1];
     private static int playerIndex = 1;
 
     static TurnManager()
@@ -24,6 +20,6 @@ public static class TurnManager
     public static void NextTurn()
     {
         ActivePlayer = Players[playerIndex++ % 2];
-        Form1.ChangeTurnDisplay(ActivePlayer);
+        TicTacToeForm.ChangeTurnDisplay(ActivePlayer);
     }
 }
